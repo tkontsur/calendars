@@ -1,6 +1,5 @@
 import dayjs from 'dayjs';
 import ukLocale from 'dayjs/locale/uk';
-import logo from './logo.svg';
 import './App.css';
 import { useState, useTransition, useRef, useEffect } from 'react';
 import { hasHoliday } from './data/dataSelectors';

@@ -38,11 +38,11 @@
 .date.crossed::before {
     content: '';
     position: absolute;
-    height: 66px;
+    height: calc(50px * 1.4);
     border-left: 2px solid red;
-    transform: rotate(-40deg);
+    transform: rotate(-38deg);
     transform-origin: 0 0;
     margin-left: -22px;
     margin-top: -2px;
-    border-radius: 1px;
+    border-radius: 2px;
 }
