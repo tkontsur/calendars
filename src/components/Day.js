@@ -2,7 +2,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import { hasMovingHoliday, getMovigHoliday } from '../data/dataSelectors';
 import CalendarPage from './CalendarPage';
-import { Moving, Fixed } from './HolidayTypes';
+import { Moving } from './HolidayTypes';
 import './day.css';
 
 const Day = props => {
@@ -22,7 +22,7 @@ const Day = props => {
 
     return (<>
         {showMonth && <div className='month-title'>{day.format('MMMM')}</div>}
-        <div className={cn('day', { 'red': dayOfWeek == 0 })}>
+        <div className={cn('day', { 'red': dayOfWeek === 0 })}>
             <CalendarPage 
                 day={day} 
                 crossed={inverted && hasMovingHoliday(targetDate)} 
