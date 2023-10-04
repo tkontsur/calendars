@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "@wixc3/react-board": "^2.3.0",
     "react-snap": "^1.23.0"
   }
 }
