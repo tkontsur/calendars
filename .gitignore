@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+/func/*/node_modules
+
 /.pnp
 .pnp.js
 /src/_codux
@@ -11,6 +13,7 @@
 
 # production
 /build
+/func/deploy
 
 # misc
 .DS_Store
@@ -22,3 +25,5 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+ads.txt
+/.vscode
