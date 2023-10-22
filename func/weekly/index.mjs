@@ -26,7 +26,7 @@ export const handler = async (event) => {
     const filteredWeek = week.filter(d => hasMovingHoliday(normalizeDate(d)));
     
     if (filteredWeek.length > 0) {
-      const message = `Свята на наступному тижні:\n${filteredWeek.map(d => `- ${d.format('D MMM, dddd')}: ${getMovigHoliday(normalizeDate(d))}`).join('\n')}\nПовний список на https://www.new-holidays.in.ua/`;
+      const message = `Свята на наступному тижні:\n${filteredWeek.map(d => `- ${d.format('D MMM, dddd')}: ${getMovigHoliday(normalizeDate(d))}`).join('\n')}\n\nПовний список на https://www.new-holidays.in.ua/`;
       console.log(`Sending message: ${message}`);
       
       try {
