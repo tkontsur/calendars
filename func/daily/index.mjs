@@ -20,9 +20,13 @@ export const handler = async (event) => {
       const holiday = getMovigHoliday(tomorrow);
       console.log(`Today is holiday: ${holiday}`);
       try {
-        const telegramBot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: false });
-        const answer = await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, `Нагадую, завтра свято: *${holiday}*!`, { parse_mode: 'Markdown' });
-        console.log(`Sent the message successfully: ${answer}`);
+        if (!event?.dryRun) {
+          const telegramBot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: false });
+          const answer = await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, `Нагадую, завтра свято: *${holiday}*!`, { parse_mode: 'Markdown' });
+          console.log(`Sent the message successfully: ${answer}`);
+        } else {
+          console.log('Dry run, no message sent');
+        }
       } catch (e) {
         console.log('Error sending message', e);
       }

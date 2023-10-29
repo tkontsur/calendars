@@ -27,12 +27,16 @@ export const handler = async (event) => {
     
     if (filteredWeek.length > 0) {
       const message = `Свята на наступному тижні:\n${filteredWeek.map(d => `- ${d.format('D MMM, dddd')}: ${getMovigHoliday(normalizeDate(d))}`).join('\n')}\n\nПовний список на https://www.new-holidays.in.ua/`;
-      console.log(`Sending message: ${message}`);
+      console.log(`Message: ${message}`);
       
       try {
-        const telegramBot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: false });
-        const answer = await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, message, { parse_mode: 'Markdown' });
-        console.log(`Sent the message successfully: ${answer}`);
+        if (!event?.dryRun) {
+          const telegramBot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: false });
+          const answer = await telegramBot.sendMessage(process.env.TELEGRAM_CHAT_ID, message, { parse_mode: 'Markdown' });
+          console.log(`Sent the message successfully: ${answer}`);
+        } else {
+          console.log('Dry run, no message sent');
+        }
       } catch (e) {
         console.log('Error sending message', e);
       }
