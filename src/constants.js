@@ -1,0 +1,1 @@
+export const TELEGRAM_URL = 'https://t.me/+MUeHGk3RnIs2MmQ6';

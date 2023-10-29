@@ -4,6 +4,7 @@ import './App.css';
 import { useState, useTransition, useRef, useEffect } from 'react';
 import { hasHoliday } from './data/dataSelectors';
 import Day from './components/Day';
+import TGIcon from './components/controls/TGIcon';
 
 function App() {
   dayjs.locale(ukLocale);
@@ -84,6 +85,11 @@ function App() {
         </div>
         <div ref={observerTarget}></div>
       </main>
+      <footer>
+        <div className='control-panel'>
+          <TGIcon />
+        </div>
+      </footer>
     </div>
   );
 }
