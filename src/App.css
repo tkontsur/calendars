@@ -34,13 +34,6 @@
   position: fixed;
 }
 
-@media screen and (max-width: 1280px) {
-  .control-panel {
-    right: 0;
-    width: 100%;
-  }
-}
-
 .control-item {
   margin: 30px;
 }
@@ -48,4 +41,16 @@
 .control-icon {
   height: 80px;
   width: 80px;
+}
+
+@media screen and (max-width: 1280px) {
+  .control-panel {
+    right: 0;
+    width: 100%;
+  }
+
+  .control-icon {
+    height: 60px;
+    width: 60px;
+  }
 }
