@@ -4,7 +4,7 @@ import CalendarPage from '../CalendarPage';
 import './Moving.css';
 
 const Moving = props => {
-    const { date, name, inverted } = props;
+    const { date, name = '', inverted } = props;
     const targetDate = inverted ? date : date.add(13, 'd');
 
     return (
@@ -18,7 +18,7 @@ const Moving = props => {
 
 Moving.propTypes = {
     date: PropTypes.object.isRequired,
-    name: PropTypes.string.isRequired,
+    name: PropTypes.string,
     inverted: PropTypes.bool
 }
 
