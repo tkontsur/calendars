@@ -80,7 +80,7 @@
   position: absolute;
   top: 40%;
   left: calc(50% - 300px / 2);
-  width: 300px;
+  min-width: 300px;
 }
 
 .add-modal-overlay {
@@ -89,5 +89,5 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
 }

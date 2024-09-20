@@ -75,7 +75,7 @@ function App() {
       <ReactModal 
           isOpen={showAddDialog} 
           className='add-modal' 
-          overlayClassName='add-modal-ovrlay'>
+          overlayClassName='add-modal-overlay'>
         <DateDialogContent onClose={() => setShowAddDialog(false)} onSelect={(date) => setItems([...items, date])}/>
       </ReactModal>
     </div>

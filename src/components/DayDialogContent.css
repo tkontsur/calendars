@@ -1,4 +1,21 @@
 .add-date-content {
-    display: block;
-    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.add-date-content > div {
+    margin: 0 10px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5px;
+}
+
+.controls > button[name='add'] {
+    display: none;
 }
