@@ -1,16 +1,17 @@
 {
-  "name": "daily-lambda-handler",
+  "name": "weekly-lambda-handler",
   "version": "1.0.0",
-  "description": "Lambda function to check if tomorrow is any holiday",
+  "description": "Lambda function to check weekly holidays",
   "main": "index.mjs",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ../test-local.mjs weekly"
   },
   "author": "Taras Kontsur",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.1472.0",
+    "@aws-sdk/client-s3": "^3.490.0",
     "dayjs": "^1.11.10",
-    "node-telegram-bot-api": "^0.63.0"
+    "node-telegram-bot-api": "^0.64.0"
   }
 }
